@@ -1,0 +1,33 @@
+{
+    "name": "hascamp/basecrypt",
+    "type": "library",
+    "description": "Simple encryption code to develop Hascha Media applications based on Laravel Framework",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/hascamp/basecrypt/issues",
+        "source": "https://github.com/hascamp/basecrypt"
+    },
+    "authors": [
+        {
+            "name": "Fariz Huzairi",
+            "email": "farizhuzairi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hascamp\\BaseCrypt\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}
