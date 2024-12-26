@@ -7,7 +7,7 @@ abstract class BaseCode
     protected function chiper(): string
     {
         // with publisher
-        return config('app.chiper');
+        return config('app.cipher');
     }
 
     protected function isValidJson(string $data): bool
