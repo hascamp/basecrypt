@@ -47,13 +47,13 @@ class BaseCrypt extends BaseCode
                 return $jsonValidate($return);
             }
             else{
-                throw new \Exception("Invalid data type result. #code", [
-                    'mode' => $mode
-                ]);
+                throw new \Exception("Invalid data type result. #code");
             }
         } catch (\Throwable $th) {
             // laravel support ...
-            \Illuminate\Support\Facades\Log::error($th->getMessage(), ['exception' => $th]);
+            if(class_exists(\Illuminate\Support\Facades\Log::class)) {
+                \Illuminate\Support\Facades\Log::error($th->getMessage(), ['exception' => $th]);
+            }
             return null;
         }
 
