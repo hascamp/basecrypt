@@ -8,11 +8,16 @@ class Setting
 
     public static function cipher(): string
     {
+        $log = static::LARAVEL_LOG;
+        
         try {
-            return constant('config'('app.cipher'));
+            return config('app.cipher');
         } catch (\Throwable $th) {
-            static::LARAVEL_LOG::notice($th->getMessage());
-            return "AES-256-CBC";
+            if (class_exists($log)) {
+                $log::notice($th->getMessage());
+            }
         }
+
+        return "AES-256-CBC";
     }
 }
