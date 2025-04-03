@@ -71,10 +71,10 @@ class BaseCrypt extends BaseCode
         }
 
         if ($name === $_enc) {
-            return new self($data, $key, $_enc);
+            return static::code($data, $key, $_enc);
         }
         else if ($name === $_dec) {
-            return new self($data, $key, $_dec);
+            return static::code($data, $key, $_dec);
         }
 
         return null;
