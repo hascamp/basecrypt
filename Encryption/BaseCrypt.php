@@ -2,6 +2,7 @@
 
 namespace Hascamp\BaseCrypt\Encryption;
 
+use Hascamp\BaseCrypt\Crypter\Crypter;
 use Hascamp\BaseCrypt\Encryption\BaseCode;
 use Hascamp\BaseCrypt\Encryption\Support\Setting;
 
@@ -60,6 +61,12 @@ class BaseCrypt extends BaseCode
 
     public static function __callStatic($name, $args)
     {
+        if ($name === 'hash') {
+            $str = $args[0] ?? null;
+            $key = $args[1] ?? null;
+            return (new Crypter)->hash($str, $key);
+        }
+
         $_enc = "encrypt";
         $_dec = "decrypt";
         $data = null;
