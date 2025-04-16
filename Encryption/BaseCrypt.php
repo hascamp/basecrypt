@@ -62,7 +62,7 @@ class BaseCrypt extends BaseCode
     public static function __callStatic($name, $args)
     {
         if ($name === 'hash') {
-            return Crypter::__to_hash($name, $args);
+            return Crypter::__to_hash($args);
         }
 
         $_enc = "encrypt";
